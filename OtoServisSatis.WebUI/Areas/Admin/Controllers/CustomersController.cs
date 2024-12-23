@@ -31,7 +31,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
             return View();
         }
 
-        // GET: CustomersController/Create
+        // GET: CustomersController/Createemusa
         public async Task<ActionResult> CreateAsync()
         {
             ViewBag.AracId = new SelectList(await _serviceArac.GetAllAsync(), "Id", "Modeli");
