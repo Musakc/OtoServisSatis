@@ -12,6 +12,7 @@ namespace OtoServisSatis.Data
         public DbSet<Rol> Roller { get; set; }
         public DbSet<Satis> Satislar { get; set; }
         public DbSet<Servis> Servisler { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"server=(LocalDb)\MSSQLLocalDB; database=OtoServisSatisNetCore; integrated security=True; MultipleActiveResultSets=True;");
@@ -37,7 +38,7 @@ namespace OtoServisSatis.Data
                 Email = "admin@otoservissatis.tc",
                 KullaniciAdi = "admin",
                 Sifre = "123456",
-               // Rol = new Rol { Id = 1 },
+                // Rol = new Rol { Id = 1 },
                 RolId = 1
             });
             base.OnModelCreating(modelBuilder);
