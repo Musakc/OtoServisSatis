@@ -35,5 +35,14 @@ namespace OtoServisSatis.Entities
 
         public virtual Arac? Arac { get; set; }
 
+        [Display(Name = "Ad Soyad"), ScaffoldColumn(false)]
+        public string? AdSoyad
+        {
+            get
+            {
+                return this.Adi+ " " + this.Soyadi;
+            }
+        }
+
     }
 }

@@ -7,7 +7,7 @@ namespace OtoServisSatis.Entities
         public int Id { get; set; }
 
         [Display(Name = "Marka Adı"), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
-        public int MarkaId{ get; set; }
+        public int MarkaId { get; set; }
 
         [StringLength(50), Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
         public string Renk { get; set; }
@@ -27,22 +27,30 @@ namespace OtoServisSatis.Entities
 
         [Display(Name = "Satışta mı?")]
         public bool SatistaMi { get; set; }
-        
+
         [Display(Name = "Anasayfa?")]
         public bool Anasayfa { get; set; }
-        
+
         [Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
         public string Notlar { get; set; }
 
         [StringLength(100)]
-        public string? Resim1 { get; set; } 
+        public string? Resim1 { get; set; }
 
         [StringLength(100)]
         public string? Resim2 { get; set; }
-        
+
         [StringLength(100)]
         public string? Resim3 { get; set; }
 
-        public virtual Marka? Marka{ get; set; }  //araç sınıfı ile marka sınıfı arasında bağlantı
+        public virtual Marka? Marka { get; set; }  //araç sınıfı ile marka sınıfı arasında bağlantı
+        [Display(Name = "Ad Soyad"), ScaffoldColumn(false)]
+        public string? AracBilgi
+        {
+            get
+            {
+                return this.Renk + " " + this.Modeli + " " + this.KasaTipi;
+            }
+        }
     }
 }
