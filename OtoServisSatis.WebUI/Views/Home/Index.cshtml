@@ -3,14 +3,14 @@
 @{
     ViewData["Title"] = "AnaSayfa";
 }
-
+@*  *@
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
 
     <div class="carousel-inner">
     @foreach (var item in Model.Sliders)
     {
             <div class="carousel-item @(item==Model.Sliders.FirstOrDefault() ? "active" : "")">
-                <img src="/Img/Slider/@item.Resim" class="d-block w-100" style="max-height: 400px; object-fit: cover;" alt="...">
+                <img src="/Img/Slider/@item.Resim" class="d-block w-100" style="max-height:400px;;object-fit :contain;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>@item.Baslik</h5>
                     <p>@item.Aciklama</p>
