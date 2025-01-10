@@ -102,12 +102,12 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         // POST: CustomersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, Musteri musteri)
+        public async Task<ActionResult> DeleteAsync(int id, Musteri musteri)
         {
             try
             {
                 _service.Delete(musteri);
-                _service.SaveAsync();
+                await _service.SaveAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch

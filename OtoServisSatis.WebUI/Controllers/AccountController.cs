@@ -73,6 +73,7 @@ namespace OtoServisSatis.WebUI.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> RegisterAsync(Kullanici kullanici)
         {
@@ -128,7 +129,6 @@ namespace OtoServisSatis.WebUI.Controllers
                     {
                         claims.Add(new Claim(ClaimTypes.Role, rol.Adi));
                     }
-
                     var userIdentity = new ClaimsIdentity(claims, "Login");
                     ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                     await HttpContext.SignInAsync(principal);
